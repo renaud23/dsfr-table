@@ -1,0 +1,12 @@
+#{ns(toggle)} {
+  page-break-inside: avoid;
+
+  label {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  #{ns(hint-text)} {
+    @include text-style(md);
+  }
+}

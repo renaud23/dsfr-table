@@ -1,0 +1,8 @@
+id: radio
+title: Bouton radio
+description: Le bouton radio permettent à l’utilisateur de sélectionner une seule option dans une liste.
+doc: https://www.systeme-de-design.gouv.fr/version-courante/fr/composants/bouton-radio
+wrapper: col-8
+style:
+  - core
+  - form

@@ -22,11 +22,12 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": ".",
+    "paths": {
+        "@src/*": ["src/*"],
+        "@lib/*": ["lib/*"],
+      },
   },
-  "include": ["src"],
-  "paths": {
-      "@src/*": ["./src/*"],
-      "@lib/*": ["./lib/*"],
-    },
+  "include": ["src","lib"],
 }

@@ -1,19 +1,27 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
-import { fn } from "storybook/test";
 import { DataTable } from "@lib/table/DataTable";
-import { Column } from "@lib/table/Column";
+
+import type { ColumnType } from "@lib/table/table";
+
+const data = [
+  { id: "1", name: "Renaud" },
+  { id: "2", name: "Stéphanie" },
+  { id: "3", name: "Joseph" },
+];
+
+const columns: ColumnType[] = [
+  { property: "id", header: <div>#</div> },
+  { property: "name", header: <div>Nom&nbsp;:</div> },
+];
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: "Example/DataTable",
   component: () => (
     <>
-      yop!
-      <DataTable>
-        <Column name="id" />
-        <Column name="name" />
-      </DataTable>
+      <h1>yop!</h1>
+      <DataTable columns={columns} value={data}></DataTable>
     </>
   ),
   parameters: {},

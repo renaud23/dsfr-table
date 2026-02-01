@@ -12,10 +12,12 @@ export type TbodyProps = {
 };
 
 type Nested = {
-  children?: ReactElement<ComponentProps<typeof Tr>> | Array<ReactElement<ComponentProps<typeof Tr>>>;
+  children?:
+    | ReactElement<ComponentProps<typeof Tr>>
+    | Array<ReactElement<ComponentProps<typeof Tr>>>;
 };
 
-export const Theader = forwardRef<
+export const Tbody = forwardRef<
   HTMLTableSectionElement,
   PropsWithChildren<TbodyProps & Nested>
 >(function Theader(props: PropsWithChildren<TbodyProps & Nested>, ref) {

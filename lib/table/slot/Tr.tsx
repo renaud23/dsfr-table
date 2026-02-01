@@ -13,7 +13,7 @@ export type TrProps = {
 };
 
 type Nested = {
-  children:
+  children?:
     | ReactElement<ComponentProps<typeof Th>>
     | ReactElement<ComponentProps<typeof Td>>
     | Array<ReactElement<ComponentProps<typeof Td>>>

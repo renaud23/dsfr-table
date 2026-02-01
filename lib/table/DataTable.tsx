@@ -1,33 +1,27 @@
-import { useEffect, useRef, type ReactElement, isValidElement } from "react";
-import { Table } from "./html/Table";
-import type { ColumnProps } from "./Column";
-import { Theader } from "./html/Theader";
-import { Tr } from "./html/Tr";
+import { Body } from "./Body";
+import { Table } from "./slot/Table";
 
-export type DataTableProps = {
-  children?: ReactElement<ColumnProps> | ReactElement<ColumnProps>[];
+import type { ColumnType } from "./table";
+import { Header } from "@lib/table/Header";
+
+export type DataTableProps<U> = {
+  value: Array<U>;
+  columns: Array<ColumnType>;
 };
 
-export function DataTable(props: DataTableProps) {
-  const { children } = props;
+function getAsArray<U>(e: U | U[]) {
+  return Array.isArray(e) ? e : [e];
+}
 
-  const init = useRef(false);
-
-  useEffect(() => {
-    if (!init.current) {
-      init.current = true;
-      let c = Array.isArray(children) ? children : [children];
-
-      c.map((child) => {
-        if (isValidElement<ColumnProps>(child)) {
-        }
-      });
-    }
-  }, []);
+export function DataTable<
+  U extends Record<string, unknown> = Record<string, unknown>,
+>(props: DataTableProps<U>) {
+  const { columns, value } = props;
 
   return (
     <Table>
-      <Theader></Theader>
+      <Header columns={columns} />
+      <Body columns={columns} value={value} />
     </Table>
   );
 }

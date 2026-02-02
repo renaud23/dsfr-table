@@ -1,0 +1,11 @@
+.data-table {
+  .data-table--table {
+    .data-table--tr {
+      .data-table--td {
+        &:focus {
+          outline: solid 2px red;
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,6 @@
 import {
   forwardRef,
   type ComponentProps,
-  type ComponentType,
-  type ElementType,
   type PropsWithChildren,
   type ReactElement,
 } from "react";
@@ -11,6 +9,7 @@ import type { Tbody } from "./Tbody";
 
 type TableProps = {
   className?: string;
+  id?: string;
 };
 
 type Nested = {

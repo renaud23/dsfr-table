@@ -1,0 +1,25 @@
+.drag-drop-files {
+  height: 250px;
+  width: 100%;
+  border: dashed 2px gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  &:hover {
+    background-color: lightgray;
+    border: dashed 2px blue;
+  }
+
+  .input-file {
+    /* visibility: hidden; */
+    margin: auto;
+  }
+
+  label {
+    text-align: center;
+  }
+
+  .upload-button {
+    margin: auto;
+  }
+}
